@@ -6,6 +6,7 @@ const hbs = require('hbs')//nota: pra fazer o site funcionar com partials vc tem
 const { title } = require('process')
 
 const app = express()
+const port = process.env.PORT || 3000 //Só o heroku consegue fazer esse negocio, a nossa maquina vai ficar com o 3000
 
 app.set('view engine', 'hbs')//falando pro app usar view engine do hbs
 
@@ -80,6 +81,6 @@ app.get('*',(req,res)=>{//tem que ficar no final pq o express tem que testar os 
         name:'Leandro'
     })
 })
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000.')
+app.listen(port,()=>{
+    console.log('Server is up on port '+port+'.')
 })
