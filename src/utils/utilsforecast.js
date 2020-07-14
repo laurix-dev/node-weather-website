@@ -8,7 +8,7 @@ const forecast = (longitude,latitude,callback)=>{
               callback('Não foi possivel encontrar o local',undefined)
          }else{
               callback(undefined,
-                   'Temperatura atual '+body.current.temperature+' sensação termica '+body.current.feelslike
+                   'Temperatura atual: '+body.current.temperature+' Sensação termica: '+body.current.feelslike+' Velocidade do vento: '+body.current.wind_speed+' É de dia? '+(body.current.is_day=='yes'?'sim':'não')
               )
          }
     })
